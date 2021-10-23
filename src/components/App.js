@@ -5,15 +5,14 @@ import {
   Switch,
   Route 
 } from 'react-router-dom';
-import Home from './Home';
 import SearchBar from './SearchBar';
 
 import './App.css';
-import DetailView from './DetailView';
 
 function App() {
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState('');
+  const [businesses, setBusinesses] = useState([]);
 
 
   return (
@@ -22,28 +21,20 @@ function App() {
         <SearchBar
           query={query}
           setQuery={setQuery}
+          search={search}
           setSearch={setSearch}
-        />
+          businesses = {businesses}
+          setBusinesses = {setBusinesses}
+          />
         <Switch>
-          <Route
-            path='/search/DetailView'
+          {/* <Route
+            path='/search/DetailCard'
             render={props =>(
-              <DetailView
+              <DetailCard
                 {...props}
               />
             )}
-          />
-          <Route
-            exact
-            path="/"
-            render={props => (
-              <Home
-                {...props}
-                query = {query}
-                search = {search}
-              />
-            )}
-          />
+          /> */}
         </Switch>
       </Router>
     </div>

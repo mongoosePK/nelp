@@ -1,15 +1,15 @@
 import { withRouter } from 'react-router-dom';
+import LandingPage from './LandingPage';
+import ResultList from './ResultList';
 
+function SearchBar ({query, setQuery, search, setSearch, businesses, setBusinesses}) {
 
-function SearchBar ({query, setQuery, setSearch}) {
-  
   const submitSearchForm = (query) => {
-    console.log(query + ' form submitted!!'); 
-    const searchSlug = encodeURI(query);
-    setSearch(searchSlug);
+    setSearch(encodeURI(query))
   };
 
   return(
+    <>
     <form onSubmit={e => e.preventDefault()}>
       <input 
       className="searchForm"
@@ -17,7 +17,7 @@ function SearchBar ({query, setQuery, setSearch}) {
       placeholder="Search Naperville..."
       value={ query }
       onChange={(e) => setQuery(e.target.value)}
-        />
+      />
     <button
       className="search_button"
       type="submit"
@@ -25,7 +25,18 @@ function SearchBar ({query, setQuery, setSearch}) {
       >click</button>
     </form>
     // If the search term has been entered render Result list component
+    <p>query={query}</p>
+    <p>search={search}</p>
 
+    { 
+    search === '' ?
+    <LandingPage/> :
+    <ResultList 
+    search={search}
+    businesses = {businesses}
+    setBusinesses = {setBusinesses}/> 
+    }  
+    </>
   );
 };
 

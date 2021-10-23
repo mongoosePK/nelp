@@ -1,23 +1,21 @@
 import { withRouter } from 'react-router-dom';
 import { BusinessSearch } from '../api/BusinessSearch';
-import { useState } from 'react';
+import DetailCard from './DetailCard';
 
-function ResultList ( {search} ) {
+function ResultList ( {search, businesses, setBusinesses} ) {
 
-    const [businesses, setBusinesses] = useState({ hits: [] });
     
-    BusinessSearch( {search, businesses, setBusinesses} );
-
+    BusinessSearch({search, businesses, setBusinesses})
+    const results = businesses.map(business => 
+        <DetailCard key={business.id} business={business} />)
+    
+    console.log({businesses});
+    
     return(
         <>
-        <p>Result List for {search} Coming</p>
-        {/* <ul>
-            {businesses.hits.map(item => (
-                <li key={item.id}>
-                    <a href={item.url}>{item.name}</a>
-                </li>
-            ))};
-        </ul> */}
+        <div>
+            {results}
+        </div>
         </>
     );
 }
