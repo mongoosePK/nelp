@@ -4,6 +4,8 @@ import ResultList from './ResultList';
 
 function SearchBar ({query, setQuery, search, setSearch, businesses, setBusinesses}) {
 
+  // If the search term has been entered render Result list component
+
   const submitSearchForm = (query) => {
     setSearch(encodeURI(query))
   };
@@ -24,7 +26,6 @@ function SearchBar ({query, setQuery, search, setSearch, businesses, setBusiness
       onClick={() => submitSearchForm(query)}
       >click</button>
     </form>
-    // If the search term has been entered render Result list component
     <p>query={query}</p>
     <p>search={search}</p>
 

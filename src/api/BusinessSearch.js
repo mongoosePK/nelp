@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import yelpapi from './FusionAPI';
 
-export function BusinessSearch( {search, setBusinesses } ) {
+export function BusinessSearch({search, setBusinesses}) {
     
     
     useEffect(() => {
@@ -11,8 +11,6 @@ export function BusinessSearch( {search, setBusinesses } ) {
             .get(`/businesses/search?term=${search}&location=naperville&limit=5`)
                 .then(response => {
                     setBusinesses(response.data.businesses);
-                    console.log("the api made the call");
-                    console.log(response.data);
                 })
                 .catch(err => {
                     console.log(err);

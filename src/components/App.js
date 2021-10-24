@@ -8,6 +8,7 @@ import {
 import SearchBar from './SearchBar';
 
 import './App.css';
+import Details from './Details';
 
 function App() {
   const [query, setQuery] = useState('');
@@ -18,23 +19,24 @@ function App() {
   return (
     <div>
       <Router>
-        <SearchBar
-          query={query}
-          setQuery={setQuery}
-          search={search}
-          setSearch={setSearch}
-          businesses = {businesses}
-          setBusinesses = {setBusinesses}
-          />
         <Switch>
-          {/* <Route
-            path='/search/DetailCard'
-            render={props =>(
-              <DetailCard
-                {...props}
+          <Route exact path="/">
+              <SearchBar
+                query={query}
+                setQuery={setQuery}
+                search={search}
+                setSearch={setSearch}
+                businesses = {businesses}
+                setBusinesses = {setBusinesses}
               />
-            )}
-          /> */}
+          </Route>
+          <Route path="/Details">
+              <Details
+
+                // bizDetails={bizDetails}
+                // setBizDetails={setBizDetails}
+              />
+          </Route>
         </Switch>
       </Router>
     </div>

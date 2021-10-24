@@ -1,13 +1,13 @@
 import { withRouter } from 'react-router-dom';
 import { BusinessSearch } from '../api/BusinessSearch';
-import DetailCard from './DetailCard';
+import BusinessCard from './BusinessCard';
 
 function ResultList ( {search, businesses, setBusinesses} ) {
 
     
     BusinessSearch({search, businesses, setBusinesses})
     const results = businesses.map(business => 
-        <DetailCard key={business.id} business={business} />)
+        <BusinessCard key={business.id} business={business} />)
     
     console.log({businesses});
     
