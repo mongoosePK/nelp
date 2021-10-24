@@ -2,13 +2,13 @@ import yelpapi from  './FusionAPI';
 import { useEffect } from 'react';
 
 //
-export function DetailSearch( {id, setBizDetails}) {
-    
+export function DetailSearch( {bizID, setBizDetails}) {
+    console.log(bizID)
     useEffect(() => {
         setBizDetails([]);
         const fetchData = async () => {
             const response = await yelpapi
-            .get(`/businesses/${id}`)
+            .get(`/businesses/${bizID}`)
                 .then(response => {
                     setBizDetails(response.data)
                     console.log(response.data)
@@ -19,5 +19,5 @@ export function DetailSearch( {id, setBizDetails}) {
                 });
         };
         fetchData();
-    }, [id]);
+    }, [bizID]);
 };
