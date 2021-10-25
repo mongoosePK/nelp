@@ -1,8 +1,6 @@
 import { withRouter } from 'react-router-dom';
-import LandingPage from './LandingPage';
-import ResultList from './ResultList';
 
-function SearchBar ({query, setQuery, search, setSearch, businesses, setBusinesses}) {
+function SearchBar ({query, setQuery, search, setSearch}) {
 
   // If the search term has been entered render Result list component
 
@@ -29,14 +27,7 @@ function SearchBar ({query, setQuery, search, setSearch, businesses, setBusiness
     <p>query={query}</p>
     <p>search={search}</p>
 
-    { 
-    search === '' ?
-    <LandingPage/> :
-    <ResultList 
-    search={search}
-    businesses = {businesses}
-    setBusinesses = {setBusinesses}/> 
-    }  
+   
     </>
   );
 };

@@ -3,27 +3,20 @@ import { DetailSearch } from '../api/DetailSearch';
 import Details from './Details';
 import { useState } from 'react';
 
-function BusinessCard ({business}) {
+function BusinessCard ({business, bizID, setBizID }) {
 
-    const [bizDetails, setBizDetails] = useState([]);
-    const [bizID, setBizID] = useState('');
     const setID = (id) => {setBizID(id)}
-    console.log(business.id)
-    
-    DetailSearch({bizID, setBizDetails})
-    //{bizDetails === '' ? }
-
+    console.log(bizID)
     // const details = bizDetails.map(detail =>
     //      <Details key={detail.id} detail={detail}/>)
-
 
     return(
         <>
         <Link to="/Details">
-            <div onClick={() =>  setID(business.id)}>
+            <button onClick={() =>  setID(business.id)} value={business.id}>
                 <h2>{business.name}</h2>
                 <img src={business.image_url} height="300" width="150" />
-            </div>
+            </button>
         </Link>
         </>
     );

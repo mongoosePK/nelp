@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { 
   BrowserRouter as Router,
@@ -6,15 +5,17 @@ import {
   Route 
 } from 'react-router-dom';
 import SearchBar from './SearchBar';
-
-import './App.css';
+import LandingPage from './LandingPage';
+import ResultList from './ResultList';
 import Details from './Details';
+import './App.css';
 
 function App() {
   const [query, setQuery] = useState('');
   const [search, setSearch] = useState('');
   const [businesses, setBusinesses] = useState([]);
-
+  const [bizDetails, setBizDetails] = useState([]);
+  const [bizID, setBizID] = useState('');
 
   return (
     <div>
@@ -26,15 +27,28 @@ function App() {
                 setQuery={setQuery}
                 search={search}
                 setSearch={setSearch}
-                businesses = {businesses}
-                setBusinesses = {setBusinesses}
+                businesses={businesses}
+                setBusinesses={setBusinesses}
               />
+               { 
+                search === '' ?
+                <LandingPage/> :
+                <ResultList 
+                search={search}
+                businesses={businesses}
+                setBusinesses={setBusinesses}
+                bizID={bizID}
+                setBizID={setBizID}
+                setBizDetails={setBizDetails}
+                /> 
+                }  
           </Route>
           <Route path="/Details">
               <Details
-
-                // bizDetails={bizDetails}
-                // setBizDetails={setBizDetails}
+                bizID={bizID}
+                setBizID={setBizID}
+                bizDetails={bizDetails}
+                setBizDetails={setBizDetails}
               />
           </Route>
         </Switch>
