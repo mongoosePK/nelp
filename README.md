@@ -23,6 +23,14 @@ Also:
 2. after installing npm and site dependencies, navigate into 
 the root project directory, you can run:
 
+### TODO:
+* styling, icons, bootstrap
+* pass arguments into components with props
+* testing ⚠️
+* refactor API calls, or use a call back, they might be rendering too much
+* 
+
+
 ### `npm start`
 
 which Runs the app in the development mode.\
