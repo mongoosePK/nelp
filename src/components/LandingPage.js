@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 function LandingPage () {
 
     return(
-        <p>The Landing Page Component!</p>
+        <p>What naperville Business are you Looking for?</p>
     );
 }
 

@@ -2,7 +2,6 @@ import { withRouter } from 'react-router-dom';
 
 function SearchBar ({query, setQuery, search, setSearch}) {
 
-  // If the search term has been entered render Result list component
 
   const submitSearchForm = (query) => {
     setSearch(encodeURI(query))
@@ -24,10 +23,6 @@ function SearchBar ({query, setQuery, search, setSearch}) {
       onClick={() => submitSearchForm(query)}
       >click</button>
     </form>
-    <p>query={query}</p>
-    <p>search={search}</p>
-
-   
     </>
   );
 };

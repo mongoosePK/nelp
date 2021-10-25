@@ -27,8 +27,6 @@ function App() {
                 setQuery={setQuery}
                 search={search}
                 setSearch={setSearch}
-                businesses={businesses}
-                setBusinesses={setBusinesses}
               />
                { 
                 search === '' ?

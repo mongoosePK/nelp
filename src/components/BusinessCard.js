@@ -1,14 +1,8 @@
 import { Link, withRouter } from 'react-router-dom';
-import { DetailSearch } from '../api/DetailSearch';
-import Details from './Details';
-import { useState } from 'react';
 
-function BusinessCard ({business, bizID, setBizID }) {
+function BusinessCard ({business, setBizID }) {
 
     const setID = (id) => {setBizID(id)}
-    console.log(bizID)
-    // const details = bizDetails.map(detail =>
-    //      <Details key={detail.id} detail={detail}/>)
 
     return(
         <>

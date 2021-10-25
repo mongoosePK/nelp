@@ -10,7 +10,8 @@ function Details({bizID, bizDetails, setBizDetails}) {
         
         <p>{bizDetails.name} details</p>
         <p>Rating: {bizDetails.rating} Stars</p>
-        <p>{bizDetails.address1}</p>
+        { bizDetails.is_closed ? <p>OPEN</p> : <p>CLOSED</p> }
+        <p>{bizDetails.phone}</p>
         </>
     );
 }
