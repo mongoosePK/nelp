@@ -1,6 +1,5 @@
 import { withRouter } from "react-router";
 import { DetailSearch } from "../api/DetailSearch";
-import { useState } from "react"
 
 function Details({bizID, bizDetails, setBizDetails}) {
     
@@ -10,7 +9,7 @@ function Details({bizID, bizDetails, setBizDetails}) {
         <>
         
         <p>{bizDetails.name} details</p>
-        <p>{bizDetails.rating}</p>
+        <p>Rating: {bizDetails.rating} Stars</p>
         <p>{bizDetails.address1}</p>
         </>
     );
